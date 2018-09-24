@@ -1,8 +1,12 @@
 const router = require('express').Router()
 const User = require('../models/User')
 const passport = require('../helpers/passport')
-const welcomeMail = require('../helpers/mailer').welcomeMail
+// const welcomeMail = require('../helpers/mailer').welcomeMail
 
+const isLogged = (req,res,next)=>{
+  if(req.isAuthenticated())next()
+  else res.redirect('/login')
+}
 
 //signup
 router.get('/signup',(req, res, next)=>{
@@ -22,14 +26,17 @@ router.post('/signup',(req, res, next)=>{
 //login
 
 router.get('/login', (req, res, next)=>{
+  if (req.user) req.logOut()
   res.render('auth/login')
 })
 
 router.post('/login', passport.authenticate('local'), (req, res, next)=>{
-  const {username} = req.user
-  req.app.locals.user = req.user
-  
-  res.redirect(`/users/${username}`)
+  req.app.locals.user = req.user;
+  res.redirect('/profile')
+})
+
+router.get('/profile',(req,res,next)=>{
+  res.render('users/profile')
 })
 
 router.get('/logout',(req, res, next)=>{
