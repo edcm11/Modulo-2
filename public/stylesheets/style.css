@@ -1,8 +1,247 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+* {
+  font-family: gotham; }
 
-a {
-  color: #00B7FF; }
+body {
+  background: #86deb7;
+  background: linear-gradient(180deg, #86deb7 0%, #adeee3 57%, #a0dde6 100%);
+  height: 100vh; }
+
+.contenedor-general {
+  margin-top: 5vh;
+  background: #86deb7;
+  background: linear-gradient(0deg, #86deb7 26%, #adeee3 100%);
+  height: 95vh; }
+
+/* Inicio animacion*/
+.contenedor-inicio-animacion {
+  animation: desaparecer;
+  animation-duration: 5.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: step-end;
+  z-index: 10;
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  background: #86deb7;
+  background: linear-gradient(180deg, #86deb7 0%, #adeee3 57%, #a0dde6 100%); }
+
+.inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; }
+
+.inicio img {
+  padding-bottom: 100px; }
+
+#mariposa-inicio {
+  width: 150px;
+  height: 150px; }
+
+.typewriter h2 {
+  font-weight: lighter;
+  color: white;
+  overflow: hidden;
+  /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* The typwriter cursor */
+  white-space: nowrap;
+  /* Keeps the content on a single line */
+  margin: 0 auto;
+  /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em;
+  /* Adjust as needed */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
+
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0; }
+  to {
+    width: 100%; } }
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent; }
+  50% {
+    border-color: orange; } }
+
+@keyframes desaparecer {
+  from {
+    opacity: 1;
+    z-index: 1; }
+  to {
+    opacity: 0;
+    z-index: -1; } }
+
+/* Termina inicio animacion */
+/* Nav bar */
+nav {
+  z-index: 0;
+  /*animation: aparecer;*/
+  /* animation-timing-function: step-end;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; */
+  color: white;
+  border-bottom: 1px solid white;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: fixed;
+  width: 100vw; }
+
+nav a {
+  padding: 0 50px;
+  text-decoration: none;
+  color: white;
+  z-index: 4; }
+
+@keyframes aparecer {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+/* termina Nav bar*/
+/*home*/
+.contenedor-inicio {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  color: white; }
+
+.pag-1 {
+  position: relative;
+  width: 100vw; }
+
+.texto-pg {
+  position: absolute;
+  top: 30vh;
+  padding-left: 50px;
+  width: 50vw;
+  display: inline-block; }
+
+.texto-pg h3 {
+  font-size: 120px;
+  font-weight: bold;
+  margin: 10px 0; }
+
+.texto-pg p {
+  font-weight: lighter; }
+
+/* termina home*/
+/* .horizontal-scroll-wrapper {
+  width:100vw;
+  height: 2000px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform-origin: right top;
+  transform:rotate(-90deg) translateY(-100px);
+}
+
+.horizontal-scroll-wrapper section  {
+  transform: rotate(90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper nav  {
+  transform: rotate(90deg);
+  transform-origin: right top;
+} */
+.contenedor-inicio {
+  width: 3000px;
+  position: relative;
+  display: flex;
+  background-color: none;
+  background-image: linear-gradient(#87B38D, #ADEEE3);
+  background-repeat: no-repeat; }
+
+.pag-2 {
+  position: relative;
+  left: 100vw;
+  width: 100vw;
+  top: 15vh; }
+
+.pag-2 img {
+  height: 300px;
+  margin-left: 100px;
+  display: inline-block;
+  top: 20px;
+  z-index: -1;
+  position: absolute; }
+
+.pag-2 img:nth-child(2) {
+  width: 500px;
+  margin-left: 0px;
+  position: absolute;
+  top: 30vh;
+  right: 100px;
+  z-index: -2; }
+
+.pg2 {
+  position: absolute;
+  top: 30vh; }
+
+.aboutUs {
+  color: white; }
+
+.aboutUs p {
+  font-weight: lighter; }
+
+.quote {
+  width: 20vw;
+  position: absolute;
+  left: 70vw; }
+
+.quote a {
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  text-align: center; }
+
+.icono {
+  position: fixed;
+  top: 50vh;
+  left: 90vw;
+  font-size: 30px;
+  color: white;
+  z-index: -2; }
+
+@keyframes flechita {
+  from, to {
+    color: #8491A3; }
+  50% {
+    color: #28262C; } }
+
+.formulario {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.formulario p {
+  color: white; }
+
+.formulario input {
+  background-color: transparent;
+  border-color: transparent;
+  border-bottom-color: white;
+  color: white;
+  margin: 10px 0;
+  padding: 5px;
+  width: 300px; }
+
+.botonFormulario {
+  border-color: white;
+  width: 200px; }
 
 /*# sourceMappingURL=style.css.map */
