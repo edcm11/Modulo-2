@@ -74,6 +74,8 @@ const home = require('./routes/home');
 app.use('/', home);
 const auth = require('./routes/auth')
 app.use('/',auth)
+const users = require('./routes/users')
+app.use('/',users)
 
 
 module.exports = app;

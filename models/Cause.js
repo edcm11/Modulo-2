@@ -1,20 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
+const plm = require('passport-local-mongoose')
 
 const causeSchema = new Schema({
+  cause:String,
   username:String,
-  userInfo:String,
-  contact:String,
   city:String,
   problem:String,
   description:String,
-  mUtil:String,
-  appre:String,
-  chall:String,
   moGoal:Number,
+  mUtil:String,
   time:Number,
+  appre:String,
   photosUrl:String,
-
 },{
   timestamps:{
     createdAt:"created_at",
@@ -22,4 +20,5 @@ const causeSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('User', causeSchema)
+causeSchema.plugin(plm)
+module.exports = mongoose.model('Cause', causeSchema)
