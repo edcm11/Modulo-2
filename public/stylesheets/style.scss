@@ -375,12 +375,27 @@ color:white;
 
 .causa{
   top:15vh;
+  display: flex;
+  flex-direction: row;
+  height: 75vh;
 }
 
+.numero{
+  display: flex;
+  align-items:  flex-end;
+}
+.numero h1{
+  transform: rotate(270deg);
+  font-size: 120px;
+  font-weight: 800;
+  padding:0;
+  color:white;
+}
 .formulario textarea{
-  width:300px;
+  width:400px;
   background-color: transparent;
   border: solid 1px white;
+  margin-top:10px;
 }
 
 #foto1-pag2:hover{
