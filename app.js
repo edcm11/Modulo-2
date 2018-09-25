@@ -76,8 +76,7 @@ const auth = require('./routes/auth')
 app.use('/',auth)
 const users = require('./routes/users')
 app.use('/',users)
-const causes = require('./routes/causes')
-app.use('/',causes)
+
 
 
 module.exports = app;
