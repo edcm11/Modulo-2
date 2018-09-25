@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer')
-
-
+const hbs = require('hbs');
+const fs = require('fs');
 const transporter = nodemailer.createTransport({
   service:'Gmail',
   auth:{
@@ -9,20 +9,15 @@ const transporter = nodemailer.createTransport({
   }
 })
 
-exports.welcomeMail=(username, email)=>{
-  
-  transporter.sendMail({
-    from:'butterfly',
-    to:email,
-    subject:'Welcome',
-    html:`
-      <h2>${username} bienvenido a Butterfly</h2>
-    `
-  }).then(info=>{
-    console.log(info)
-  }).catch(error=>{
-    console.log(error)
-    throw error
-  })
+const accountCreated = hbs.compile(fs.readFileSync((__dirname, './views/mail/accountCreated.hbs'), 'utf8'));
 
+exports.accountCreatedMail = function(to,subject,text,name){
+  return transporter.sendMail({
+      from: '"Butterfly" <hola@butterfly.com>',
+      to, 
+      subject, 
+      text,
+      html: accountCreated({name})
+    })
+    //.then(info => res.render('message', {email, subject, message, info}))
 }

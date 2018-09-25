@@ -1,12 +1,8 @@
 const router = require('express').Router()
 const User = require('../models/User')
 const passport = require('../helpers/passport')
-// const welcomeMail = require('../helpers/mailer').welcomeMail
+const accountCreatedMail = require('../helpers/mailer').accountCreatedMail
 
-const isLogged = (req,res,next)=>{
-  if(req.isAuthenticated())next()
-  else res.redirect('/login')
-}
 
 //signup
 router.get('/signup',(req, res, next)=>{
@@ -17,6 +13,7 @@ router.post('/signup',(req, res, next)=>{
   const {username, email} = req.body
   User.register(req.body, req.body.password)
     .then(user=>{
+      accountCreatedMail(username,email)
       res.redirect('/login')
     }).catch(error=>{
       res.render('auth/signup',{data:req.body,error})
@@ -41,9 +38,17 @@ router.post('/login', passport.authenticate('local'), (req, res, next)=>{
   res.redirect('/profile')
 })
 
-router.get('/profile',(req,res,next)=>{
+router.get('/profile', ensureAuthenticated, (req,res,next)=>{
   res.render('users/profile')
 })
+
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
 
 router.get('/logout',(req, res, next)=>{
   req.logOut()
