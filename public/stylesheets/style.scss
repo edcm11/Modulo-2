@@ -1,18 +1,22 @@
 *{
-  font-family: gotham;
+  font-family: 'Raleway', sans-serif;
 }
 
 body{
   // background-image: linear-gradient(#87B38D, #ADEEE3)
+  // background: rgb(134,222,183);
+  // background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
   background: rgb(134,222,183);
-  background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
+background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
   height: 100vh;
 }
 
 .contenedor-general{
   margin-top:5vh;
+  // background: rgb(134,222,183);
+  // background: linear-gradient(0deg, rgba(134,222,183,1) 26%, rgba(173,238,227,1) 100%);
   background: rgb(134,222,183);
-  background: linear-gradient(0deg, rgba(134,222,183,1) 26%, rgba(173,238,227,1) 100%);
+background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
   height: 95vh;
 }
 /* Inicio animacion*/
@@ -29,8 +33,10 @@ body{
   background-color: black;
   position:absolute;
   left:0;
+  // background: rgb(134,222,183);
+  // background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
   background: rgb(134,222,183);
-  background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
+background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
 }
 
 .inicio{
@@ -145,15 +151,15 @@ nav a{
 .texto-pg{
     
     position: absolute;
-    top: 30vh;
+    top: 20vh;
     padding-left: 50px;
     width: 50vw;
     display:inline-block;
 }
 
 .texto-pg h3{
-  font-size: 120px;
-  font-weight: bold;
+  font-size: 140px;
+  font-weight: 900;
   margin: 10px 0;
 }
 
@@ -214,11 +220,16 @@ nav a{
   width:500px;
   margin-left: 0px;
   position: absolute;
+  left:40vw;
   top:30vh;
   right:100px;
   z-index: -2;
 }
 
+.pag-2 a{
+  text-decoration: none;
+  color:white;
+}
 .pg2{
   position: absolute;
   top:30vh;
@@ -235,7 +246,7 @@ color:white;
 .quote{
   width:20vw;
   position: absolute;
-  left:70vw;
+  left:55vw;
 }
 
 .quote a{
@@ -244,6 +255,8 @@ color:white;
   text-decoration: none;
   color:white;
   text-align: center;
+  padding:5px 100px;
+  border:  solid 1px white;
 }
 
 // .quote strong{
@@ -274,6 +287,7 @@ color:white;
 
 .formulario p{
   color:white;
+  font-weight: 600;
 }
 
 .formulario input{
@@ -289,4 +303,90 @@ color:white;
 .botonFormulario{
   border-color:white;
   width:200px
+}
+
+
+.perfil{
+  color: white;
+  position:absolute;
+  top: 10vh;
+  margin-left:100px;
+
+}
+
+.perfil h1{
+  font-size: 50px;
+  font-weight:800;
+}
+
+.card{
+  display:flex;
+  flex-direction: row;
+  border: solid 3px white;
+  width: 70vw;
+  padding: 30px;
+  align-items: center;
+}
+
+
+.division{
+  width:2px;
+  background-color: white;
+  height: 300px;
+}
+
+.card img{
+  width:200px;
+  height:200px;
+  border-radius: 200px;
+  padding:40px;
+}
+
+.texto-card{
+  padding-left: 70px;
+  color: #99A1A6;
+}
+.titulito{
+  color: white; 
+ }
+
+.texto-card a{
+  // background-color: #ADEEE3;
+  border: solid 1px white;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  margin-top: 20px;
+}
+
+
+
+ ul{
+  list-style: none;
+}
+
+.contenedor-xl{
+  height:130vh;
+  // background: rgb(134,222,183);
+  // background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
+  background: rgb(134,222,183);
+  background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
+}
+
+.causa{
+  top:15vh;
+}
+
+.formulario textarea{
+  width:300px;
+  background-color: transparent;
+  border: solid 1px white;
+}
+
+#foto1-pag2:hover{
+content: url("https://laverdadnoticias.com/__export/1537532476244/sites/laverdad/img/2018/09/21/tormenta_tropical_sinaloa-3-e1537492448505-960x500.jpg_793492074.jpg")
+}
+
+#foto2-pag2:hover{
+  content: url("http://www.sinembargo.mx/wp-content/uploads/2018/09/lluvias-sinaloa-emergencia-2.jpg")
 }
