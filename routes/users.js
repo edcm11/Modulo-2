@@ -25,7 +25,7 @@ router.get('/cDetail/:id',(req,res,next)=>{
   Cause.findById(id)
   .then(cause=>{
     console.log(cause)
-    res.render('../views/home/cDetail.hbs', {cause})
+    res.render('../views/home/cDetail.hbs', cause)
   })
 })
 
