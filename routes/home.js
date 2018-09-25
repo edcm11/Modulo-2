@@ -10,9 +10,9 @@ router.get('/aboutus', (req, res, next) => {
   res.render('home/aboutus');
 });
 
-router.get('/causes', (req, res, next) => {
-  res.render('home/causes');
-});
+// router.get('/causes', (req, res, next) => {
+//   res.render('home/causes');
+// });
 
 router.get('/help', (req, res, next) => {
   res.render('home/help');

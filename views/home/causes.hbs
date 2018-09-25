@@ -1,14 +1,14 @@
 <div>
 <h1>This are the causes you can donate</h1>
 
- <form action="">
+ {{!-- <form action="/causes" method="POST">
     <input type="text" name="search">
     <input type="submit" value="Buscar">
-  </form>
+  </form> --}}
 
-{{#each causes}}
+{{#each cause}}
     <p>
-      <a href="/causes/cDetail/{{this._id}}">{{this.cause}}</a>
+      <a href="/cDetail/{{this._id}}">{{this.cause}}</a>
     </p>
   {{/each}}
 </div>
