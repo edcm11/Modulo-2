@@ -1,19 +1,45 @@
 
-<section class="contenedor-genera-Causa">
-<h1>{{this.cause}}</h1>
-<div class="contenedor-mariposa">
-  <img src="../../imagenes/butterflyyy.gif" alt="">
-</div>
+<section class="contenedor-general-causa contenedor-xl">
+<h1>{{this.cause}} | <span>1,000</span></h1>
+<p>{{this.city}} | {{this.problem}}</p>
 
+
+<section class="contenedor-mariposa">
+  <a href="#">¡Dona!</a>
+  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" id="mariposa1" alt="">
+  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" alt="">
+  <i class="fas fa-angle-double-down icono-mariposas"></i>
+</section>
+<section class="datos-causa">
 
 <p>{{this.username}}</p>
-<p>{{this.city}}</p>  
-<p>{{this.problem}}</p>
-<p>{{this.description}}</p>
-<p>{{this.this.moGoal}}</p>
-<p>{{this.mUtil}}</p>
-<p>{{this.time}}</p>
-<p>{{this.appre}}</p>
-<p>{{this.photosUrl}}</p>
+<div class="causa-card">
+  <div class="causa-card-div">
+    <p class="titulito-causa">¿Dónde?</p>
+    <p>{{this.city}}</p>  
+    <p class="titulito-causa">¿Cuál es el problema?</p>
+    <p>{{this.problem}}</p>
+    <p class="titulito-causa">Descripción</p>
+    <p>{{this.description}}</p>
 
+  </div>
+  <div class="division"></div>
+  <div class="causa-card-div">
+    <p class="titulito-causa">¿Cuánto se necesita?</p>
+    <p>{{this.this.moGoal}}</p>
+    <p class="titulito-causa">¿Cómo se va a utilizar?</p>
+    <p>{{this.mUtil}}</p>
+    <p class="titulito-causa">¿Cuánto tiempo tenemos?</p>
+    <p>{{this.time}}</p>
+    <p class="titulito-causa">Estas son las recompensas</p>
+    <p>{{this.appre}}</p>
+
+  </div>
+      
+</div>
+  <div class="fotos-causa">
+      <h2>Fotos</h2>
+      <p>{{this.photosUrl}}</p>
+
+  </div>
 </section>

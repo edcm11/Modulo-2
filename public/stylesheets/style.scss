@@ -1,7 +1,9 @@
 *{
   font-family: 'Raleway', sans-serif;
 }
-
+html{
+  margin: 0;
+}
 body{
   // background-image: linear-gradient(#87B38D, #ADEEE3)
   // background: rgb(134,222,183);
@@ -9,6 +11,7 @@ body{
   background: rgb(134,222,183);
 background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
   height: 100vh;
+  margin:0;
 }
 
 .contenedor-general{
@@ -99,7 +102,7 @@ background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 
 
 /* Nav bar */
 nav{
-    z-index: 0;
+    z-index: 1;
     /*animation: aparecer;*/
     /* animation-timing-function: step-end;
     animation-duration: 6s;
@@ -107,13 +110,16 @@ nav{
     animation-fill-mode: forwards; */
     color:white;
     border-bottom: 1px solid white;
-    padding-top:5px;
+    padding-top:10px;
     padding-bottom: 10px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     position: fixed;
     width: 100vw;
+    background-color: #86deb7;
+    height:3vh;
+    margin-top:0;
 }
 nav a{
     padding: 0 50px;
@@ -333,6 +339,7 @@ color:white;
   width:2px;
   background-color: white;
   height: 300px;
+  margin: 10px 50px;
 }
 
 .card img{
@@ -343,7 +350,7 @@ color:white;
 }
 
 .texto-card{
-  padding-left: 70px;
+  // padding-left: 70px;
   color: #99A1A6;
 }
 .titulito{
@@ -407,10 +414,117 @@ content: url("https://laverdadnoticias.com/__export/1537532476244/sites/laverdad
 }
 
 .contenedor-mariposa{
-  width:100vw;
-  height:50vh;
+  width:80vw;
+  height:70vh;
+  position: relative;
 }
 
 .contenedor-mariposa img{
   width:100px;
+}
+
+.contenedor-general-causa{
+  display:flex;
+  flex-direction: column;
+  position: absolute;
+  top:5vh;
+  padding: 10px 5vw;
+  color:white;
+  margin: 0;
+  height: 200vh;
+  width:90vw;
+
+}
+
+span{
+  font-weight: 200;
+}
+.contenedor-general-causa section{
+  display:block;
+}
+
+.contenedor-general-causa h1{
+font-size: 80px;
+margin:20px 0;
+}
+.datos-causa{
+  width:70vw;
+}
+
+#mariposa1{
+  animation: vuelo 4s ease infinite;
+  position: absolute;
+}
+
+@keyframes vuelo{
+  0%{
+    top:40vh;
+    left:20vw;
+    transform: rotate(70deg)
+  }
+  25%{
+    top:50vh;
+    left:30vw;
+    transform: rotate(0deg)
+  }
+  50%{
+    top:40vh;
+    left:50vw;
+    transform: rotate(30deg)
+  }
+  75%{
+    top:45vh;
+    left:60vw;
+    transform: rotate(60deg)
+  }
+  100%{
+    top:50vh;
+    left:70vw;
+    transform: rotate(50deg)
+  }
+}
+.causa-card{
+  width:80vw;
+  border:solid 3px white;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+
+.causa-card p{
+  margin: 8px 0;
+}
+.titulito-causa{
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 5px;
+  border-bottom: solid 1px white;
+}
+
+.causa-card-div{
+ width: 40%;
+ display: inline-block;
+}
+
+.contenedor-mariposa a{
+  background-color: white;
+  font-size: 26px;
+  color:rgb(92, 140, 170);
+  padding:10px;
+  width:200px;
+  position: absolute;
+  left:40%;
+  top:40%;
+  text-decoration: none;
+  text-align: center;
+  font-weight: 700;
+}
+
+.icono-mariposas{
+  font-size: 30px;
+  position: absolute;
+  left:50%;
+  top: 90%;
 }
