@@ -10,6 +10,8 @@ const userSchema = new Schema({
   },
   photoURL:String,
   email:String,
+  facebookId:String,
+  twitterId:String,
 },{
   timestamps:{
     createdAt:"created_at",

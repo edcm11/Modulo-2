@@ -23,6 +23,12 @@ router.post('/signup',(req, res, next)=>{
     })
 })
 
+router.get("/auth/facebook", passport.authenticate("facebook"));
+router.get("/auth/facebook/callback", passport.authenticate("facebook", {
+  successRedirect: "/profile",
+  failureRedirect: "/signup"
+}));
+
 //login
 
 router.get('/login', (req, res, next)=>{

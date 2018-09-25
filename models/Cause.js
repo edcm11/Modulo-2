@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const plm = require('passport-local-mongoose')
 
 const causeSchema = new Schema({
   cause:String,
@@ -20,5 +19,4 @@ const causeSchema = new Schema({
   }
 })
 
-causeSchema.plugin(plm)
 module.exports = mongoose.model('Cause', causeSchema)
