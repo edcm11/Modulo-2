@@ -16,13 +16,13 @@ router.post('/create',(req, res, next)=>{
 })
 
 router.get('/step2/:id',(req,res,next)=>{
-  res.render('../views/users/step2');
+  res.render('../views/users/step2', req.params);
   
 })
 
 router.post('/step2/:id',(req, res, next)=>{  
-
-  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body})
+  console.log(req.body)
+  Cause.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
     .then(cause=>{
       console.log(cause)
       res.redirect(`/step3/${cause._id}`)
@@ -34,7 +34,7 @@ router.get('/step3/:id',(req,res,next)=>{
 })
 
 router.post('/step3/:id',(req, res, next)=>{
-  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body},{new:true})
+  Cause.findOneAndUpdate({_id:req.params.id},{$set:req.body},{new:true})
     .then(cause=>{
       console.log(cause)
 
