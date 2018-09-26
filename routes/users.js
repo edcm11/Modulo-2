@@ -1,5 +1,7 @@
 const router = require('express').Router()
 const Cause = require('../models/Cause')
+const uploadCloud = require('../config/cloudinary.js');
+
 
 router.get('/create',(req,res,next)=>{
   res.render('../views/users/create.hbs')
@@ -9,7 +11,34 @@ router.post('/create',(req, res, next)=>{
   Cause.create(req.body)
     .then(cause=>{
       //console.log(cause)
-      res.redirect('/causes')
+      res.redirect(`/step2/${cause._id}`)
+    }).catch(e=>next(e))
+})
+
+router.get('/step2/:id',(req,res,next)=>{
+  res.render('../views/users/step2');
+  
+})
+
+router.post('/step2/:id',(req, res, next)=>{  
+
+  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body})
+    .then(cause=>{
+      console.log(cause)
+      res.redirect(`/step3/${cause._id}`)
+    }).catch(e=>next(e))
+})
+
+router.get('/step3/:id',(req,res,next)=>{
+  res.render('../views/users/step3')
+})
+
+router.post('/step3/:id',(req, res, next)=>{
+  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body},{new:true})
+    .then(cause=>{
+      console.log(cause)
+
+      //res.redirect(`/step4/${cause._id}`)
     }).catch(e=>next(e))
 })
 
@@ -28,18 +57,5 @@ router.get('/cDetail/:id',(req,res,next)=>{
     res.render('../views/home/cDetail.hbs', cause)
   })
 })
-
-// router.get('/detail/:id',(req, res, next)=>{
-//   const {id} = req.params
-//   Book.findById(id)
-//     .populate('reviews')
-//     .then(book=>{
-//       console.log(book)
-//       res.render('book-detail',book)
-//     }).catch(e=>{
-//       console.log(e)
-//       next(e)
-//     })
-// })
 
 module.exports = router

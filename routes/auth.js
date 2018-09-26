@@ -20,12 +20,6 @@ router.post('/signup',(req, res, next)=>{
     })
 })
 
-router.get("/auth/facebook", passport.authenticate("facebook"));
-router.get("/auth/facebook/callback", passport.authenticate("facebook", {
-  successRedirect: "/profile",
-  failureRedirect: "/signup"
-}));
-
 //login
 
 router.get('/login', (req, res, next)=>{
@@ -34,12 +28,13 @@ router.get('/login', (req, res, next)=>{
 })
 
 router.post('/login', passport.authenticate('local'), (req, res, next)=>{
+  const {username} = req.user
   req.app.locals.user = req.user;
-  res.redirect('/profile')
+  res.redirect(`/profile/${username}`)
 })
 
-router.get('/profile', ensureAuthenticated, (req,res,next)=>{
-  res.render('users/profile')
+router.get('/profile/:username', ensureAuthenticated, (req,res,next)=>{
+  res.render('users/profile',req.user)
 })
 
 function ensureAuthenticated(req, res, next) {
