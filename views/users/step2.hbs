@@ -5,7 +5,7 @@
 <div class="numero">
 </div>
 <div class="formulario ">
-  <form action="/step2" method="POST" enctype="multipart/form-data">
+  <form action="/step2/{{this._id}}" method="POST" enctype="multipart/form-data">
   <p>
     Descripcion del problema |
     <textarea name="description" id="" cols="30" rows="5"></textarea>
@@ -28,7 +28,7 @@
     <input type="file" name="photosUrl" id="">
   </p>
   <p>
-    <input type="submit" value="Crear formulario">
+    <input type="submit" value="Continuar formulario">
   </p>
   </form>
 </div>

@@ -16,6 +16,50 @@
   </p>
   <input type="submit" value="Regístrate" class="botonFormulario">
   </form>
-  <p>Registrate con <a href="/auth/facebook">Facebook</a></p>
+  <button id="button">Entra con facebook</button>
   <p>Si ya tienes cuenta <a href="/login">inicia sesión</a></p>
 </div>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyD_kq0ihXlxE9nzkQ86_7u-balJsNt6thI",
+    authDomain: "localhost:3000/signup",
+    databaseURL: "https://butterfly-2ef00.firebaseio.com",
+    projectId: "butterfly-2ef00",
+    storageBucket: "butterfly-2ef00.appspot.com",
+    messagingSenderId: "260056939286"
+  };
+  document.getElementById('button').addEventListener('click', () => {
+  firebase.initializeApp(config);
+  var provider = new firebase.auth.FacebookAuthProvider();
+  firebase.auth().signInWithPopup(provider)
+  .then(function(result) {
+    var token = result.credential.accessToken;
+    var user = result.user;
+    console.log(user)
+    const createUser = (user) => {
+      return fetch('http://localhost:3000/signup', {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      })  
+    }
+    createUser({username: user.displayName, email: user.email, photoURL: user.photoURL})
+    .then(result => {
+      res.redirect('/profile')
+    })
+    .catch(error => console.log(error))
+  })
+  .catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
+});
+})
+
+</script>

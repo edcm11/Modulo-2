@@ -11,19 +11,34 @@ router.post('/create',(req, res, next)=>{
   Cause.create(req.body)
     .then(cause=>{
       //console.log(cause)
-      res.redirect('/step2')
+      res.redirect(`/step2/${cause._id}`)
     }).catch(e=>next(e))
 })
 
-router.get('/step2',(req,res,next)=>{
-  res.render('../views/home/step2')
+router.get('/step2/:id',(req,res,next)=>{
+  res.render('../views/users/step2');
+  
 })
 
-router.post('/step2',(req, res, next)=>{
-  Cause.create(req.body)
+router.post('/step2/:id',(req, res, next)=>{  
+
+  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body})
     .then(cause=>{
-      //console.log(cause)
-      res.redirect('/step3')
+      console.log(cause)
+      res.redirect(`/step3/${cause._id}`)
+    }).catch(e=>next(e))
+})
+
+router.get('/step3/:id',(req,res,next)=>{
+  res.render('../views/users/step3')
+})
+
+router.post('/step3/:id',(req, res, next)=>{
+  Cause.findOneAndUpdate({_id:req-params.id},{$set:req.body},{new:true})
+    .then(cause=>{
+      console.log(cause)
+
+      //res.redirect(`/step4/${cause._id}`)
     }).catch(e=>next(e))
 })
 
