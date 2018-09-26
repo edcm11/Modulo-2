@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const donationSchema = new Schema({
+const bankaSchema = new Schema({
   cause:String,
   type:['monetary','moral']
 },{
@@ -11,4 +11,4 @@ const donationSchema = new Schema({
   }
 })
 
-module.exports = mongoose.model('Donation', donationSchema)
+module.exports = mongoose.model('Banka', bankaSchema)
