@@ -21,7 +21,8 @@ router.get("/step2/:id", (req, res, next) => {
   res.render("../views/users/step2", req.params);
 });
 
-router.post("/step2/:id", uploadCloud.single('photo'), (req, res, next) => {
+router.post("/step2/:id", uploadCloud.single('photosUrl'), (req, res, next) => {
+  if(req.file)req.body['photosUrl']= req.file.url
   //console.log(req.body)
   Cause.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
     .then(cause => {
