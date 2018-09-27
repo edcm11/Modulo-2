@@ -2,7 +2,9 @@
 var canvas = document.getElementsByTagName('canvas')[0];
 var ctx = canvas.getContext('2d');
 var rect = canvas.getBoundingClientRect()
+var pay = document.getElementById('pay')
 
+console.log(pay)
 //test
 //ctx.fillRect(0,0,canvas.width,canvas.height)
 
@@ -131,7 +133,7 @@ function update(){
   frames++
   ctx.clearRect(0,0,canvas.width,canvas.height)
   board.draw()  
-  if(frames%100===0 && score<20 && player2===false){
+  /*if(frames%100===0 && score<20 && player2===false){
     createEnemys()
     createEnemys()
   }
@@ -152,7 +154,7 @@ function update(){
     createEnemys()
     createEnemys()
     createEnemys()
-    }
+    }*/
 //   if(frames%800===0){
 //     createMuniciones()
 //   }
@@ -168,18 +170,18 @@ function update(){
 //   if(score>49)drawBoss()
 //   if(player2)mira.draw()
   drawReds()
-
   drawEnemys()
-
   xClick=null
   yClick=null
-  console.log(frames)
 } //update
 
 //funciones auxilires
-function createEnemys(){
-  enemy = new Vampire()
-  enemies.push(enemy)
+function createEnemys(num){
+  for(let i=0; i<=num;i++){
+    enemy = new Vampire()
+    enemies.push(enemy)
+  }
+  
 }//create Enemy
 
 function drawEnemys(){
@@ -199,5 +201,9 @@ function drawReds(){
   })
 }
  // Inicia la instancias de las balas iniciales
-
     start()
+//listener
+
+  createEnemys(5)
+  console.log(causita)
+
