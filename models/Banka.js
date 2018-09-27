@@ -2,8 +2,20 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const bankaSchema = new Schema({
-  cause:String,
-  type:['monetary','moral']
+  nombre:String,
+  apellidop:String,
+  apellidom:String,
+  fnacimiento:Date,
+  callen:String,
+  numi:String,
+  ciudad:String,
+  estado:String,
+  zip:Number,
+  rfc:String,
+  cause:{
+    type:Schema.Types.ObjectId,
+    ref:'Cause'
+  }
 },{
   timestamps:{
     createdAt:"created_at",

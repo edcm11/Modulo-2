@@ -1,5 +1,25 @@
 <section class="contenedor-xl">
-<h1>Datos de tu cuenta bancaria</h1>
+<h1>Datos de tu identidad</h1>
+<section>
+  <h5>Requisitos de elegibilidad</h5>
+<p>Para iniciar un proyecto en Kickstarter en México, es necesario que cumplas con los siguientes requisitos:
+</p> <br>
+<ul>
+  <li>Tienes una edad mínima de 18 años.
+</li>
+<li>Eres residente permanente de México.
+</li>
+<li>
+  Estás creando un proyecto bajo tu nombre o en representación de una entidad legal con la cual estás afiliado/a.
+</li>
+<li>Tienes una cuenta bancaria, una dirección y una identificación emitida por el gobierno de México.
+</li>
+<li>Si tú llevas el proyecto como individuo, la cuenta bancaria asociada con éste tiene que estar a tu nombre, es decir, la persona cuya identidad haya sido identificada para el proyecto.
+</li>
+<li>Tienes una tarjeta de crédito o débito.
+</li>
+</ul>
+</section>
 <div class="causa">
 
 <div class="numero">
@@ -7,23 +27,29 @@
 <div class="formulario ">
   <form action="/step3/{{id}}" method="POST" >
   <p>
-     |
-    <textarea name="description" id="" cols="30" rows="5"></textarea>
+    Tu nombre |
+    <input type="text" name="nombre" id="" placeholder="nombre">
+    <input type="text" name="apellidop" id="" placeholder="apellido paterno">
+    <input type="text" name="apellidom" id="" placeholder="apellido materno">
   </p>
   <p>
-    Meta |
-    <input type="number" name="moGoal" id="">
+    Fecha de nacimiento |
+    <input type="date" name="fnacimiento" id="">
   </p>
   <p>
-    Plazo de recaudación |
-    <input type="number" name="time" id="">
+    Domicilio |
+    <input type="text" name="callen" id="" placeholder="calle y número">
+    <input type="text" name="numin" id="" placeholder="número interior">
+    <input type="text" name="ciudad" id="" placeholder="ciudad">
+    <input type="text" name="estado" id="" placeholder="estado">
+    <input type="number" name="zip" id="" placeholder="código postal">
   </p>
   <p>
-    Utilización del dinero |
-    <textarea name="mUtil" id="" cols="30" rows="5"></textarea>
+    RFC |
+    <input type="text" name="rfc" id="" placeholder="DAXR870101XYZ">
   </p>
   <p>
-    <input type="submit" value="Continuar formulario">
+    <input type="submit" value="continuar">
   </p>
   </form>
 </div>

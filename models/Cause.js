@@ -11,7 +11,7 @@ const causeSchema = new Schema({
   mUtil:String,
   time:Number,
   appre:String,
-  photosUrl:String,
+  photosUrl:String
 },{
   timestamps:{
     createdAt:"created_at",
