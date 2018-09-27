@@ -14,7 +14,7 @@ const accountCreated = hbs.compile(fs.readFileSync((__dirname, './views/mail/acc
 
 exports.accountCreatedMail = function(to,subject,text,name){
   return transporter.sendMail({
-      from: '"Butterfly" <hola@butterfly.com>',
+      from: '"Flip" <donaciones.flip@gmail.com>',
       to, 
       subject, 
       text,
