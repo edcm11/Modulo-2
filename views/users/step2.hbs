@@ -1,13 +1,14 @@
-<section class="contenedor-xl">
-  <h1>Datos Primordiales</h1>
+<section class="contenedor-general">
 <div class="causa">
 
 <div class="numero">
+  <h1>Paso 2.</h1>
 </div>
 <div class="formulario ">
   <form action="/step2/{{id}}" method="POST" enctype="multipart/form-data">
   <p>
     Descripcion del problema |
+    <br>
     <textarea name="description" id="" cols="30" rows="5"></textarea>
   </p>
   <p>
@@ -20,6 +21,7 @@
   </p>
   <p>
     Utilización del dinero |
+    <br>
     <textarea name="mUtil" id="" cols="30" rows="5"></textarea>
   </p>
   <p>
@@ -28,7 +30,7 @@
     <input type="file" name="photosUrl" id="">
   </p>
   <p>
-    <input type="submit" value="Continuar formulario">
+    <input type="submit" value="Continuar formulario" class="botonFormulario">
   </p>
   </form>
 </div>
