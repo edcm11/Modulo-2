@@ -2,7 +2,15 @@ const router = require('express').Router()
 const User = require('../models/User')
 const passport = require('../helpers/passport')
 const accountCreatedMail = require('../helpers/mailer').accountCreatedMail
+const uploadCloud = require('../helpers/cloudinary');
 
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
 
 //signup
 router.get('/signup',(req, res, next)=>{
@@ -37,13 +45,35 @@ router.get('/profile/:username', ensureAuthenticated, (req,res,next)=>{
   res.render('users/profile',req.user)
 })
 
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  } else {
-    res.redirect('/login')
+router.get('/edit/:username',  ensureAuthenticated,(req,res) => {
+     res.render('../views/users/editUser.hbs') 
   }
-}
+)
+
+router.post("/edit/:username", (req,res,next) => {
+ let {username} = req.params;
+ User.findOneAndUpdate(username, {...req.body}, {new: true})
+ .then(user => {
+   req.app.locals.loggedUser = user
+   res.redirect('/profile')
+ })
+ .catch(e => next(e))
+})
+
+////***********--PROFILE-IMAGE--***********////
+router.get('/edit_image', ensureAuthenticated, (req,res) => {
+ res.render('../views/users/edit_image.hbs')
+})
+
+router.post('/edit_image', ensureAuthenticated, uploadCloud.single('photoURL'), (req,res,next) => {
+ User.findOneAndUpdate(req.app.locals.loggedUser.username, {photoURL: req.file.url}, {new: true})
+ .then(user => {
+   req.app.locals.loggedUser = user
+   console.log(user)
+   res.redirect('/profile')
+ })
+ .catch(e => next(e))
+})
 
 router.get('/logout',(req, res, next)=>{
   req.logOut()

@@ -1,0 +1,25 @@
+<h1>EDITA TU PERFIL</h1>
+
+<form action="/edit/socio/{{_id}}" method="post" enctype="multipart/form-data">
+
+<p>
+  <label for="username">Nombre de Usuario</label>
+  <input type="text" name="{{username}}" id="" value="{{username}}">
+</p>
+
+<p>
+  <label for="email">Correo electronico</label>
+  <input type="email" name="{{email}}" id="" value="{{email}}">
+</p>
+
+<input type="file" name="photoURL" >
+<input type="submit" value="Sube tu foto">
+
+{{#if password}}
+  <p>
+    <label for="password">Contraseña</label>
+    <input type="password" name="password" id="password">
+  </p>
+{{/if}}
+  <p><input type="submit" value="Edita tu perfil"></p>
+</form>

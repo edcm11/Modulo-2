@@ -3,20 +3,20 @@ const cloudinaryStorage = require('multer-storage-cloudinary');
 const multer = require('multer');
 
 cloudinary.config({
-  cloud_name: 'dpew8xqza',
-  api_key: '839522483739879',
-  api_secret: '867oKI3trl718lj7MUjrDgeTUaA' 
+  cloud_name:"dn3s8lyeh",
+  api_key: '767159691198498',
+  api_secret: 'lYZMg3GOcw5SGpiI0c7pwKrFRGk'
 });
 
 var storage = cloudinaryStorage({
-  cloudinary: cloudinary,
-  folder: 'butterfly', // The name of the folder in cloudinary
-  allowedFormats: ['jpg', 'png'],
-  filename: function (req, file, cb) {
-    cb(null, file.originalname); // The file on cloudinary would have the same name as the original file name
-  }
+  cloudinary,
+  folder: 'Proyecto 2',
+  allowedFormats: ['jpg', 'png', 'gif'],
+  filename: (req, file, cb)=> {
+    cb(null, file.originalname); 
+ }
 });
 
-const uploadCloud = multer({ storage: storage });
+const uploadCloud = multer({ storage });
 
 module.exports = uploadCloud;
