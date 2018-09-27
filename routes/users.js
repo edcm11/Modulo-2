@@ -8,7 +8,7 @@ router.get("/create", (req, res, next) => {
 });
 
 router.post("/create", (req, res, next) => {
-    Cause.create(nuevaCausa)
+    Cause.create()
       .then(cause => {
         //console.log(cause)
         res.redirect(`/step2/${cause._id}`);
