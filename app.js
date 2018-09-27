@@ -12,8 +12,7 @@ const path         = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const passport = require('./helpers/passport')
-require("dotenv").config();
-mongoose.connect(process.env.MONGODB_URI);
+
 
 
 
