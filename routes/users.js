@@ -14,6 +14,7 @@ router.post("/create", (req, res, next) => {
         res.redirect(`/step2/${cause._id}`);
       })
       .catch(e => next(e));
+      
   });
 
 router.get("/step2/:id", (req, res, next) => {
