@@ -11,9 +11,7 @@ body {
   margin: 0; }
 
 .contenedor-general {
-  margin-top: 5vh;
-  background: #86deb7;
-  background: linear-gradient(180deg, #86deb7 0%, #ade4ee 50%, #93a8ac 100%);
+  margin-top: 10vh;
   height: 95vh; }
 
 /* Inicio animacion*/
@@ -62,7 +60,7 @@ body {
   /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em;
   /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite, desaparecer 5.5s forwards step-end 1; }
 
 /* The typing effect */
 @keyframes typing {
@@ -84,7 +82,7 @@ body {
     z-index: 1; }
   to {
     opacity: 0;
-    z-index: -1; } }
+    z-index: -4; } }
 
 /* Termina inicio animacion */
 /* Nav bar */
@@ -107,8 +105,8 @@ nav {
   background-color: white;
   height: 3vh;
   margin-top: 0;
-  opacity: 0;
-  transition: 0.3s all ease; }
+  transition: 0.3s all ease;
+  top: 0; }
 
 nav:hover {
   opacity: 1; }
@@ -236,7 +234,7 @@ nav a {
   left: 90vw;
   font-size: 30px;
   color: white;
-  z-index: -2; }
+  z-index: -1; }
 
 @keyframes flechita {
   from, to {
@@ -295,8 +293,8 @@ nav a {
 .card {
   display: flex;
   flex-direction: row;
-  border: solid 3px white;
-  width: 70vw;
+  border: solid 3px #8491A3;
+  width: 60vw;
   padding: 30px;
   align-items: center; }
 
@@ -313,25 +311,20 @@ nav a {
   padding: 40px; }
 
 .texto-card {
-  color: #99A1A6; }
+  color: #28262C; }
 
 .titulito {
-  color: white; }
+  color: #28262C; }
 
 .texto-card a {
-  border: solid 1px white;
+  border: solid 1px #8491A3;
   padding: 5px;
   text-decoration: none;
-  color: white;
-  margin-top: 20px; }
+  color: #544E61;
+  margin-top: 50px; }
 
 ul {
   list-style: none; }
-
-.contenedor-xl {
-  height: 130vh;
-  background: #86deb7;
-  background: linear-gradient(180deg, #86deb7 0%, #ade4ee 50%, #93a8ac 100%); }
 
 .causa {
   top: 15vh;
@@ -353,7 +346,7 @@ ul {
 .formulario textarea {
   width: 400px;
   background-color: transparent;
-  border: solid 1px white;
+  border: solid 1px #8491A3;
   margin-top: 10px; }
 
 #foto1-pag2:hover {
@@ -539,5 +532,49 @@ body {
     background-position: 100% 50%; }
   100% {
     background-position: 0% 50%; } }
+
+.contenedor-blanco {
+  background-color: white;
+  width: 60%;
+  height: 80%;
+  margin: 50px; }
+
+.aboutUs {
+  color: #544E61;
+  padding: 20px 40px; }
+
+.aboutUs h1 {
+  color: #544E61; }
+
+.centrar {
+  display: flex;
+  justify-content: center;
+  width: 100vw; }
+
+.contenedor-columna {
+  display: flex;
+  flex-direction: column; }
+
+.contenedor-blanco-user {
+  background-color: white;
+  padding: 30px;
+  width: 66vw; }
+
+.contenedor-nombres {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.nombre {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  width: 40%;
+  margin: 20px; }
+
+.contenedor-nombres img {
+  width: 200px;
+  border-radius: 100px; }
 
 /*# sourceMappingURL=style.css.map */
