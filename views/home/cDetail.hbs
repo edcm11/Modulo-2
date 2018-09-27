@@ -1,18 +1,18 @@
 
 <section class="contenedor-general-causa contenedor-xl">
 <h1>{{this.cause}} | <span>1,000</span></h1>
-<p>{{this.city}} | {{this.problem}}</p>
+<p>{{this.problema}} | {{this.username}}
 
 
 <section class="contenedor-mariposa">
-  <a href="#">¡Dona!</a>
-  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" id="mariposa1" alt="">
-  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" alt="">
+  <a id=""href="#">¡Dona!</a>
+  <canvas id="canvas" width="1150px" height="400px"
+  {{!-- <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" id="mariposa1" alt="">
+  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" alt=""> --}}
   <i class="fas fa-angle-double-down icono-mariposas"></i>
 </section>
 <section class="datos-causa">
-
-<p>{{this.username}}</p>
+<div class="contenedor-card-causa">
 <div class="causa-card">
   <div class="causa-card-div">
     <p class="titulito-causa">¿Dónde?</p>
@@ -21,7 +21,6 @@
     <p>{{this.problem}}</p>
     <p class="titulito-causa">Descripción</p>
     <p>{{this.description}}</p>
-    <h1>Holiiii</h1>
 
   </div>
   <div class="division"></div>
@@ -36,11 +35,13 @@
     <p>{{this.appre}}</p>
 
   </div>
-      
+    
 </div>
   <div class="fotos-causa">
       <h2>Fotos</h2>
       <p>{{this.photosUrl}}</p>
 
   </div>
+</div>
 </section>
+

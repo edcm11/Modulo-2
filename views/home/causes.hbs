@@ -1,14 +1,21 @@
-<div>
-<h1>This are the causes you can donate</h1>
+<section class="contenedor-general-listaC">
+    <div class="lista-causas">
+        <div class="texto-lista-causas">
+            <h1>¿A qué causa deseas donar?</h1>
 
- {{!-- <form action="/causes" method="POST">
-    <input type="text" name="search">
-    <input type="submit" value="Buscar">
-  </form> --}}
+    {{!-- <form action="/causes" method="POST">
+        <input type="text" name="search">
+        <input type="submit" value="Buscar">
+      </form> --}}
 
-{{#each cause}}
-    <p>
-      <a href="/cDetail/{{this._id}}">{{this.cause}}</a>
-    </p>
-  {{/each}}
-</div>
+            {{#each cause}}
+                <div class="cada-causa">
+                <p>
+                <a href="/cDetail/{{this._id}}">{{this.cause}}</a> | {{this.city}}
+                por {{this.username}}
+                </p>
+              </div>
+            {{/each}}
+        </div>
+    </div>
+</section>
