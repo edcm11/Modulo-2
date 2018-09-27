@@ -4,8 +4,8 @@
 <div class="numero">
   <h1>Paso 2.</h1>
 </div>
-<div class="formulario">
-  <form action="/step2/{{id}}" method="POST" >
+<div class="formulario ">
+  <form action="/step2/{{id}}" method="POST" enctype="multipart/form-data">
   <p>
     Descripcion del problema |
     <br>
@@ -24,11 +24,11 @@
     <br>
     <textarea name="mUtil" id="" cols="30" rows="5"></textarea>
   </p>
-  {{!-- <p>
+  <p>
     Sube una foto que describa a tu causa. <br>
   (recuerda que todos van a verla asi que escoje una gran foto.) |
     <input type="file" name="photosUrl" id="">
-  </p> --}}
+  </p>
   <p>
     <input type="submit" value="Continuar formulario" class="botonFormulario">
   </p>

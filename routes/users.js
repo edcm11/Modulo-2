@@ -1,6 +1,6 @@
 const router = require('express').Router()
 const Cause = require('../models/Cause')
-const uploadCloud = require('../config/cloudinary.js');
+const uploadCloud = require('../helpers/cloudinary');
 
 
 router.get('/create',(req,res,next)=>{
@@ -20,8 +20,8 @@ router.get('/step2/:id',(req,res,next)=>{
   
 })
 
-router.post('/step2/:id',(req, res, next)=>{  
-  console.log(req.body)
+router.post('/step2/:id',uploadCloud.single('fhoto'),(req, res, next)=>{  
+  //console.log(req.body)
   Cause.findByIdAndUpdate(req.params.id,{$set:req.body},{new:true})
     .then(cause=>{
       console.log(cause)
@@ -56,6 +56,10 @@ router.get('/cDetail/:id',(req,res,next)=>{
     console.log(cause)
     res.render('../views/home/cDetail.hbs', cause)
   })
+})
+
+router.get('/paymode',(req,res,next)=>{
+  res.render('../views/home/paymode.hbs')
 })
 
 module.exports = router
