@@ -1,25 +1,33 @@
-<h1>EDITA TU PERFIL</h1>
+<div class="contenedor-general">
 
-<form action="/edit/socio/{{_id}}" method="post" enctype="multipart/form-data">
 
-<p>
-  <label for="username">Nombre de Usuario</label>
-  <input type="text" name="{{username}}" id="" value="{{username}}">
-</p>
+  <div class="contenedor-formulario centrar">
+    <div class="formulario">
+        <h1>Edita tu perfil</h1>
+    <form action="/edit/socio/{{_id}}" method="post" enctype="multipart/form-data">
 
-<p>
-  <label for="email">Correo electronico</label>
-  <input type="email" name="{{email}}" id="" value="{{email}}">
-</p>
+    <p>
+      <label for="username">Nombre de Usuario |</label>
+      <input type="text" name="{{username}}" id="" value="{{username}}">
+    </p>
 
-<input type="file" name="photoURL" >
-<input type="submit" value="Sube tu foto">
+    <p>
+      <label for="email">Correo electronico |</label>
+      <input type="email" name="{{email}}" id="" value="{{email}}">
+    </p>
 
-{{#if password}}
-  <p>
-    <label for="password">Contraseña</label>
-    <input type="password" name="password" id="password">
-  </p>
-{{/if}}
-  <p><input type="submit" value="Edita tu perfil"></p>
-</form>
+    <input type="file" name="photoURL" >
+    <br>
+    <input type="submit" value="Sube tu foto" class="botonFormulario">
+
+    {{#if password}}
+      <p>
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password">
+      </p>
+    {{/if}}
+      <p><input type="submit" value="Edita tu perfil" class="botonFormulario"></p>
+    </form>
+    </div>
+  </div>
+</div>

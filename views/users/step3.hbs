@@ -1,6 +1,15 @@
-<section class="contenedor-xl">
-<h1>Datos de tu identidad</h1>
-<section>
+<section class="contenedor-general">
+
+
+<div class="causa">
+
+<div class="numero">
+  <h1>Paso 3.</h1>
+  {{!-- <p>Datos de tu identidad</p> --}}
+</div>
+<div class="contenedorformulario"> 
+<div class="formulario">
+  <section>
   <h5>Requisitos de elegibilidad</h5>
 <p>Para iniciar un proyecto en Kickstarter en México, es necesario que cumplas con los siguientes requisitos:
 </p> <br>
@@ -20,12 +29,6 @@
 </li>
 </ul>
 </section>
-<div class="causa">
-
-<div class="numero">
-  <h1>Paso 3.</h1>
-</div>
-<div class="formulario ">
   <form action="/step3/{{id}}" method="POST" >
   <p>
     Tu nombre |
@@ -50,9 +53,10 @@
     <input type="text" name="rfc" id="" placeholder="DAXR870101XYZ">
   </p>
   <p>
-    <input type="submit" value="continuar">
+    <input type="submit" value="continuar" class="botonCrear">
   </p>
   </form>
 </div>
+</div> 
 </div>
 </section>
