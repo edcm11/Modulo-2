@@ -436,6 +436,14 @@ span {
   font-weight: 700;
   z-index: 2; }
 
+.contenedor-mariposainput[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  font-size: 26px;
+  color: #5c8caa;
+  padding: 10px;
+  width: 200px;
+  border: none; }
+
 .icono-mariposas {
   font-size: 30px;
   position: absolute;
@@ -588,5 +596,47 @@ body {
   font-weight: 400;
   margin: 3px;
   list-style: circle; }
+
+.contenedorDonacion {
+  width: 60vw;
+  background-color: white;
+  height: 70vh; }
+
+.tipoDonacion {
+  border: solid 2px #544E61;
+  margin: 30px; }
+
+.tipoDonacion h1 {
+  color: #544E61;
+  text-align: center;
+  font-size: 40px; }
+
+.cardDonacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center; }
+
+.cardDonacion h2 {
+  color: #544E61; }
+
+.divsDonacion {
+  width: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+#icono-dinero {
+  color: #544E61;
+  font-size: 60px;
+  margin-bottom: 30px; }
+
+#icono-amor {
+  color: #544E61;
+  font-size: 60px;
+  margin-bottom: 30px; }
+
+.botones-paypal img {
+  width: 100%; }
 
 /*# sourceMappingURL=style.css.map */

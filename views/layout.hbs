@@ -16,11 +16,17 @@
         <a  href="/">Home</a>
         <a  href="/aboutus">Acerca de nosotros</a>
         <a  href="/causes">Causas</a>
-        <a  href="/help">¡Ayuda!</a>
-        <a href="/profile/:username">Perfil</a>
+        {{!-- <a  href="/help">¡Ayuda!</a> --}}
+        {{!-- <a href="/paymode">¡Dona!</a> --}}
         <div>
-        <a href="/login">Iniciar sesión</a> |
-        <a href="/logout">Cerrar sesión</a> </div>
+          {{#if username}}
+          <a href="/profile/:username">{{username}}</a>
+          |
+        <a href="/logout">Cerrar sesión</a>
+        {{else}}
+        <a href="/login">Iniciar sesión</a> 
+        {{/if}} 
+        </div>
         
 </nav>
 
