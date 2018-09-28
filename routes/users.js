@@ -4,7 +4,15 @@ const Banka = require("../models/Banka");
 const Donation = require("../models/Donation")
 const uploadCloud = require("../helpers/cloudinary");
 
-router.get("/create", (req, res, next) => {
+function ensureAuthenticated(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/login')
+  }
+}
+
+router.get("/create",ensureAuthenticated, (req, res, next) => {
   res.render("../views/users/create.hbs");
 });
 

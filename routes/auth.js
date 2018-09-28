@@ -66,21 +66,7 @@ router.post('/:username/edit',uploadCloud.single('photoURL'),(req,res,next)=>{
     console.log(e)
   })
 })    
-
-// router.get('/edit/:username',  ensureAuthenticated,(req,res) => {
-//      res.render('../views/users/editUser.hbs',req.user) 
-//   }
-// )
-
-// router.post("/edit/:username",uploadCloud.single('photoURL'), (req,res,next) => {
-//   if(req.file)req.body['photoURL']= req.file.url
-//  User.findOneAndUpdate(username, req.app.locals.loggedUser.username,{photoURL: req.file.url}, {new: true})
-//  .then(user => {
-//    req.app.locals.loggedUser = user
-//    res.redirect('/profile')
-//  })
-//  .catch(e => next(e))
-// })
+  
 
 router.get('/logout',(req, res, next)=>{
   req.logOut()
