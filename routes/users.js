@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const Cause = require("../models/Cause");
 const Banka = require("../models/Banka");
+const Donation = require("../models/Donation")
 const uploadCloud = require("../helpers/cloudinary");
 
 router.get("/create", (req, res, next) => {
@@ -56,10 +57,10 @@ router.get("/step4/:id", (req, res, next) => {
 });
 
 router.post("/step4/:id", (req, res, next) => {
-  Banka.create(req.body)
-    .then(bank => {
-      //console.log(cause)
-      res.redirect(`/done/${bank._id}`);
+  Banka.findByIdAndUpdate(req.params.id, { $set: req.body }, { new: true })
+  .then(bank => {
+    console.log(bank);
+      res.redirect(`/done/${bank.id}`);
     })
     .catch(e => next(e));
 });
@@ -82,8 +83,28 @@ router.get("/cDetail/:id", (req, res, next) => {
   });
 });
 
-router.get("/paymode", (req, res, next) => {
+router.post("/cDetail/:id", (req, res, next) => {
+  Cause.findById(req.params.id)
+  .then(cause=>{
+   //let donaN = req.body
+   //donaN.c = donations._id
+    Donation.create({user:req.user._id})
+    .then(dona => {
+      Cause.findByIdAndUpdate(req.params.id,{$push:{donations:dona._id}})
+        .then(c=>{
+          res.redirect(`/paymode/${dona.id}`);
+        })  
+      console.log(dona)
+      
+  })
+    .catch(e => next(e));
+}).catch(e=>next(e))
+})
+
+
+router.get("/paymode/:id", (req, res, next) => {
+  const { id } = req.params;
   res.render("../views/home/paymode.hbs");
 });
 
-module.exports = router;
+module.exports = router

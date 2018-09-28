@@ -11,7 +11,11 @@ const causeSchema = new Schema({
   mUtil:String,
   time:Number,
   appre:String,
-  photosUrl:String
+  photosUrl:String,
+  donations:[{
+    type:Schema.Types.ObjectId,
+    ref:'Donation'
+  }]
 },{
   timestamps:{
     createdAt:"created_at",
