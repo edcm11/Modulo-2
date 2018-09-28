@@ -314,7 +314,7 @@ nav a {
 .titulito {
   color: #28262C; }
 
-.texto-card a {
+.texto-card h3 {
   border: solid 1px #8491A3;
   padding: 5px;
   text-decoration: none;
@@ -426,7 +426,6 @@ span {
   background-color: white;
   font-size: 26px;
   color: #5c8caa;
-  padding: 10px;
   width: 200px;
   position: absolute;
   left: 40%;
@@ -436,7 +435,7 @@ span {
   font-weight: 700;
   z-index: 2; }
 
-.contenedor-mariposainput[type=button], input[type=submit], input[type=reset] {
+.contenedor-mariposa input[type=button], input[type=submit], input[type=reset] {
   background-color: white;
   font-size: 26px;
   color: #5c8caa;
@@ -453,7 +452,7 @@ span {
 #flechitas-mariposa {
   color: white;
   position: absolute;
-  left: 40%;
+  left: 50%;
   top: 59%;
   background-color: transparent; }
 
