@@ -46,7 +46,7 @@ router.post("/step3/:id", (req, res, next) => {
     .then(bank => {
 
       console.log(bank)
-      res.redirect(`/step4/${bank.id}`);
+      res.redirect('/causes');
     })
     .catch(e => console.log(e));  
   })
