@@ -436,6 +436,14 @@ span {
   font-weight: 700;
   z-index: 2; }
 
+.contenedor-mariposainput[type=button], input[type=submit], input[type=reset] {
+  background-color: white;
+  font-size: 26px;
+  color: #5c8caa;
+  padding: 10px;
+  width: 200px;
+  border: none; }
+
 .icono-mariposas {
   font-size: 30px;
   position: absolute;

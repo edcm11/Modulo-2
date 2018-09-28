@@ -544,6 +544,15 @@ margin:20px 0 5px 0;
   
 }
 
+.contenedor-mariposainput[type=button], input[type=submit], input[type=reset]{
+  background-color: white;
+  font-size: 26px;
+  color:rgb(92, 140, 170);
+  padding:10px;
+  width:200px;
+  border: none;
+}
+
 .icono-mariposas{
   font-size: 30px;
   position: absolute;
