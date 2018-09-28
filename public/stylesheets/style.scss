@@ -8,8 +8,8 @@ body{
   // background-image: linear-gradient(#87B38D, #ADEEE3)
   // background: rgb(134,222,183);
   // background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,238,227,1) 57%, rgba(160,221,230,1) 100%);
-  background: rgb(134,222,183);
-  background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
+  // background: rgb(134,222,183);
+  // background: linear-gradient(180deg, rgba(134,222,183,1) 0%, rgba(173,228,238,1) 50%, rgba(147,168,172,1) 100%);
   height: 100vh;
   margin:0;
 }
@@ -458,7 +458,7 @@ content: url("https://laverdadnoticias.com/__export/1537532476244/sites/laverdad
 
 .contenedor-mariposa{
   width:80vw;
-  height:60vh;
+  height:100vh;
   position: relative;
 }
 
@@ -474,9 +474,8 @@ content: url("https://laverdadnoticias.com/__export/1537532476244/sites/laverdad
   padding: 10px 5vw;
   color:white;
   margin: 0;
-  height: 200vh;
   width:90vw;
-
+  height: 220vh;
 }
 
 span{
@@ -491,42 +490,21 @@ font-size: 80px;
 margin:20px 0 5px 0;
 }
 .datos-causa{
-  margin-top:75px;
-  width:60vw;
-}
-
-#mariposa1{
-  animation: vuelo 4s ease infinite;
+  margin:100px 0;
   position: absolute;
+  top:90vh;
+  width:60vw;
+  display: block;
 }
 
-@keyframes vuelo{
-  0%{
-    top:40vh;
-    left:20vw;
-    transform: rotate(70deg)
-  }
-  25%{
-    top:50vh;
-    left:30vw;
-    transform: rotate(0deg)
-  }
-  50%{
-    top:40vh;
-    left:50vw;
-    transform: rotate(30deg)
-  }
-  75%{
-    top:45vh;
-    left:60vw;
-    transform: rotate(60deg)
-  }
-  100%{
-    top:50vh;
-    left:70vw;
-    transform: rotate(50deg)
-  }
+#flechitasMariposa{
+
 }
+
+.fotos-causa img{
+  width: 400px;
+ }
+
 .causa-card{
   width:80vw;
   border:solid 3px #8491A3;
@@ -565,13 +543,22 @@ margin:20px 0 5px 0;
   text-align: center;
   font-weight: 700;
   z-index: 2;
+  
 }
 
 .icono-mariposas{
   font-size: 30px;
   position: absolute;
-  left:50%;
-  top: 90%;
+  left: 53%;
+  top: 59%;
+}
+
+#flechitas-mariposa{
+  color:white;
+  position: absolute;
+  left: 40%;
+  top: 59%;
+  background-color: transparent;
 }
 
 #canvas{
@@ -626,6 +613,8 @@ z-index: 0;
   color:#544E61;
   flex-wrap: wrap;
   padding:20px;
+  flex-direction: column;
+  justify-items:center;
 }
 
 body {
@@ -642,7 +631,7 @@ body {
 		background-position: 0% 50%
 	}
 	50% {
-		background-position: 100% 50%
+		background-position: 50% 50%
 	}
 	100% {
 		background-position: 0% 50%
@@ -738,3 +727,4 @@ body {
   margin:3px;
   list-style: circle;
 }
+
