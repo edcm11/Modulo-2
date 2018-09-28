@@ -46,30 +46,15 @@ router.get('/profile/:username', ensureAuthenticated, (req,res,next)=>{
 })
 
 router.get('/edit/:username',  ensureAuthenticated,(req,res) => {
-     res.render('../views/users/editUser.hbs') 
+     res.render('../views/users/editUser.hbs',req.user) 
   }
 )
 
-router.post("/edit/:username", (req,res,next) => {
- let {username} = req.params;
- User.findOneAndUpdate(username, {...req.body}, {new: true})
+router.post("/edit/:username",uploadCloud.single('photoURL'), (req,res,next) => {
+  if(req.file)req.body['photoURL']= req.file.url
+ User.findOneAndUpdate(username, req.app.locals.loggedUser.username,{photoURL: req.file.url}, {new: true})
  .then(user => {
    req.app.locals.loggedUser = user
-   res.redirect('/profile')
- })
- .catch(e => next(e))
-})
-
-////***********--PROFILE-IMAGE--***********////
-router.get('/edit_image', ensureAuthenticated, (req,res) => {
- res.render('../views/users/edit_image.hbs')
-})
-
-router.post('/edit_image', ensureAuthenticated, uploadCloud.single('photoURL'), (req,res,next) => {
- User.findOneAndUpdate(req.app.locals.loggedUser.username, {photoURL: req.file.url}, {new: true})
- .then(user => {
-   req.app.locals.loggedUser = user
-   console.log(user)
    res.redirect('/profile')
  })
  .catch(e => next(e))

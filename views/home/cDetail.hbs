@@ -5,10 +5,14 @@
 
 
 <section class="contenedor-mariposa">
-  <a href="" id="pay">¡Dona!</a>
+<form action="/cDetail/{{ this._id}}" method="POST">
+  <p><input type="number" name="numbersOD" placeholder="cuanto donas?"></p>
+  <p><input type="submit" value="Dona"></p>
+</form>
   <canvas id="canvas" width="800px" height="450px"></canvas>
   {{!-- <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" id="mariposa1" alt="">
-  <img src="http://bestanimations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" alt=""> --}}
+  <img src="http://bestaniations.com/Animals/Insects/Butterflys/butterfly-animated-gif-45.gif" alt=""> --}}
+  <i class="fas fa-angle-double-down icono-mariposas"></i>
   <a href="#datos-causa" id="flechitas-mariposa"><i class="fas fa-angle-double-down icono-mariposas"></i></a>
 </section>
 <section class="datos-causa" id="datos-causa">
@@ -46,7 +50,8 @@
 </section>
   <script>
     let con = 0
-    const cantidad = 10
+    const cantidad = {{this.donations.length}}
+    console.log(cantidad)
     /***elcanvasalv**/
     //canvas confiuration
 var canvas = document.getElementsByTagName('canvas')[0];
@@ -187,38 +192,7 @@ function update(){
     createEnemys()
     con++
   }
-  /*if(frames%100===0 && score<20 && player2===true){
-    createEnemys()
-    createEnemys()
-    createEnemys()
-    createEnemys()
-  }
-  if(frames%100===0 && score>19 && score<50 && player2 === false){
-    createEnemys()
-    createEnemys()
-    createEnemys()
-    }
-  if(frames%100===0 && score>19 && score<50 && player2 === true){
-    createEnemys()
-    createEnemys()
-    createEnemys()
-    createEnemys()
-    createEnemys()
-    }*/
-//   if(frames%800===0){
-//     createMuniciones()
-//   }
-//   if(frames%90 === 0 && score>50 && player2===false){
-//     createRed()
-//     createRed()
-//   }
-//   if(frames%70 === 0 && score>50 && player2===true){
-//     createRed()
-//     createRed()
-//     createRed()
-//   }
-//   if(score>49)drawBoss()
-//   if(player2)mira.draw()
+
   drawReds()
   drawEnemys()
   xClick=null

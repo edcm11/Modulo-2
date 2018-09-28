@@ -2,8 +2,11 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const donationSchema = new Schema({
-  cause:String,
-  type:['monetary','moral']
+  numbersOD:Number,
+  user:{
+    type:Schema.Types.ObjectId,
+    ref:'User'
+  }
 },{
   timestamps:{
     createdAt:"created_at",
